@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Zoom on Scroll (Zoom Out)</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .scroll-trigger {
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scrollbar-width: none; 
+      -ms-overflow-style: none; 
+    }
+
+    .scroll-trigger::-webkit-scrollbar {
+      display: none; 
+    }
+
+    .scroll-trigger img {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .a {
+      display: flex;
+      justify-content: center;
+      color: blueviolet;
+      font-size: 30px;
+      
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      const scrollTrigger = $('.scroll-trigger');
+      $(window).scroll(function() {
+        const scrollPosition = $(window).scrollTop();
+        const zoomLevel = 1 - (scrollPosition / 1000); 
+        scrollTrigger.css('transform', `scaleX(${zoomLevel})`);
+      });
+    });
+  </script>
+</head>
+  <body>
+    
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div> 
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div>
+    <div class="a">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      <img src="Layer4.png" alt="Zooming Image" class="scroll-trigger">
+    </div>
+
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div> 
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div> 
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+      tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    </div>
+  </body>
+</html>

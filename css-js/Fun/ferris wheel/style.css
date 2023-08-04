@@ -1,0 +1,332 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: linear-gradient(#024, #200 50%);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-size: 10px;
+    perspective: 80em;
+    overflow: hidden;
+  }
+  
+  *:not(:empty) {
+    transform-style: preserve-3d;
+  }
+  
+  .scene {
+    position: relative;
+    animation: scene 60s -50s infinite linear;
+  }
+  
+  @keyframes scene {
+    from {
+      transform: translateY(-5em) rotateY(0deg);
+    }
+    to {
+      transform: translateY(-5em) rotateY(-360deg);
+    }
+  }
+  
+  .ferriswheel {
+    position: absolute;
+    animation: wheel 60s infinite linear;
+  }
+  
+  @keyframes wheel {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+  
+  .stand .side {
+    transform: rotateY(var(--ry, 0)) translateZ(6em);
+  }
+  
+  .stand .side:nth-child(2) {
+    --ry: 180deg;
+  }
+  
+  .stand .side > div {
+    position: absolute;
+  }
+  
+  .stand .side:nth-child(1) > div:nth-child(1) {
+    width: 25em;
+    height: 25em;
+    transform: translateX(-50%) rotateX(4deg);
+    transform-origin: top;
+    background-image: conic-gradient(from 140deg at top, #000 0, transparent 18.5deg, #000 37deg 43deg, transparent 61.5deg, #000 80deg), linear-gradient(#000, #678 10%, #234);
+    clip-path: polygon(50% 0, 0 100%, 25% 100%, 50% 0, 100% 100%, 75% 100%);
+  }
+  
+  .stand .side:nth-child(1) > div:nth-child(2) {
+    width: 25em;
+    height: 25.55em;
+    transform: translateX(-50%) rotateX(12deg);
+    transform-origin: top;
+    background-image: conic-gradient(from 140deg at top, #000 0, transparent 18.5deg, #000 37deg 43deg, transparent 61.5deg, #000 80deg), linear-gradient(#000, #abc 10%, #234);
+    clip-path: polygon(50% 0, 0 100%, 25% 100%, 50% 0, 100% 100%, 75% 100%);
+  }
+  
+  .stand .side:nth-child(1) > div:nth-child(3) {
+    width: 6em;
+    height: 28em;
+    transform: rotateY(-90deg) rotateX(atan(0.5));
+    transform-origin: top left;
+    clip-path: polygon(0 0, 1.7em 100%, 5.4em 100%);
+    background-image: conic-gradient(from 160deg at top left, #000 0, transparent 13deg, #000 30deg), linear-gradient(#000, #abc 10%, #234);
+  }
+  
+  .stand .side:nth-child(1) > div:nth-child(4) {
+    width: 6em;
+    height: 25.7em;
+    transform: rotateY(-90deg) rotateX(atan(0.57));
+    transform-origin: top left;
+    clip-path: polygon(0 0, 1.8em 100%, 5.4em 100%);
+    background-image: conic-gradient(from 160deg at top left, #000 0, transparent 13deg, #000 30deg), linear-gradient(#000, #def 10%, #234);
+  }
+  
+  .stand .side:nth-child(2) > div:nth-child(1) {
+    width: 25em;
+    height: 25em;
+    transform: translateX(-50%) rotateX(4deg);
+    transform-origin: top;
+    background-image: conic-gradient(from 140deg at top, #000 0, transparent 18.5deg, #000 37deg 43deg, transparent 61.5deg, #000 80deg), linear-gradient(#000, #456 10%, #234);
+    clip-path: polygon(50% 0, 0 100%, 25% 100%, 50% 0, 100% 100%, 75% 100%);
+  }
+  
+  .stand .side:nth-child(2) > div:nth-child(2) {
+    width: 25em;
+    height: 25.55em;
+    transform: translateX(-50%) rotateX(12deg);
+    transform-origin: top;
+    background-image: conic-gradient(from 140deg at top, #000 0, transparent 18.5deg, #000 37deg 43deg, transparent 61.5deg, #000 80deg), linear-gradient(#000, #efc 10%, #234);
+    clip-path: polygon(50% 0, 0 100%, 25% 100%, 50% 0, 100% 100%, 75% 100%);
+  }
+  
+  .stand .side:nth-child(2) > div:nth-child(3) {
+    width: 6em;
+    height: 28em;
+    transform: rotateY(-90deg) rotateX(atan(0.5));
+    transform-origin: top left;
+    clip-path: polygon(0 0, 1.7em 100%, 5.4em 100%);
+    background-image: conic-gradient(from 160deg at top left, #000 0, transparent 13deg, #000 30deg), linear-gradient(#000, #efc 10%, #234);
+  }
+  
+  .stand .side:nth-child(2) > div:nth-child(4) {
+    width: 6em;
+    height: 25.7em;
+    transform: rotateY(-90deg) rotateX(atan(0.57));
+    transform-origin: top left;
+    clip-path: polygon(0 0, 1.8em 100%, 5.4em 100%);
+    background-image: conic-gradient(from 160deg at top left, #000 0, transparent 13deg, #000 30deg), linear-gradient(#000, #abc 10%, #234);
+  }
+  
+  .stand .base {
+    width: 10em;
+    height: 10em;
+    transform: translateY(-50%) translateZ(-6em);
+    transform-style: preserve-3d;
+  }
+  
+  .stand .base > div {
+    width: 100%;
+    height: 100%;
+    background-color: #345;
+    border-radius: 50%;
+    box-shadow: 0 0 2em 0 #000 inset;
+  }
+  
+  .wing {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+  
+  .wing:nth-child(1) {
+    transform: rotateY(180deg) translateZ(8em);
+  }
+  
+  .wing:nth-child(2) {
+    transform: rotateY(90deg) translateZ(8em);
+  }
+  
+  .wing:nth-child(3) {
+    transform: rotateY(0) translateZ(8em);
+  }
+  
+  .wing:nth-child(4) {
+    transform: rotateY(-90deg) translateZ(8em);
+  }
+  
+  .wing > div {
+    position: absolute;
+    width: 16em;
+    height: 8em;
+    transform-origin: left;
+    background: #234;
+    border-radius: 0 8em 8em 0;
+    box-shadow: 0 0 2em 0 #000 inset;
+    transform-style: preserve-3d;
+  }
+  
+  .wing > div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#012 40%, transparent 50%);
+    transform-origin: left;
+    transform-style: preserve-3d;
+  }
+  
+  .wing > div::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#012 40%, transparent 50%);
+    transform-origin: left;
+    transform-style: preserve-3d;
+  }
+  
+  .basket {
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    background-color: #654;
+    border-radius: 50%;
+    transform: translateY(6.5em);
+    transform-style: preserve-3d;
+  }
+  
+  .basket::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 0.2em solid #432;
+    border-bottom: 0.2em solid #432;
+  }
+  
+  .basket::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.8em;
+    height: 0.8em;
+    background-color: #654;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .spokes {
+    position: absolute;
+    width: 0.2em;
+    height: 4em;
+    background-color: #654;
+    border-radius: 0.1em;
+    transform-style: preserve-3d;
+  }
+  
+  .spokes:nth-child(1) {
+    transform: rotateZ(0deg) translateY(2em) translateX(-1.8em);
+  }
+  
+  .spokes:nth-child(2) {
+    transform: rotateZ(45deg) translateY(2em) translateX(-1.8em);
+  }
+  
+  .spokes:nth-child(3) {
+    transform: rotateZ(90deg) translateY(2em) translateX(-1.8em);
+  }
+  
+  .spokes:nth-child(4) {
+    transform: rotateZ(135deg) translateY(2em) translateX(-1.8em);
+  }
+  
+  .spokes:nth-child(5) {
+    transform: rotateZ(180deg) translateY(2em) translateX(-1.8em);
+  }
+  
+  .spokes:nth-child(6) {
+    transform: rotateZ(225deg) translateY(2em) translateX(-1.8em);
+  }
+  
+  .spokes:nth-child(7) {
+    transform: rotateZ(270deg) translateY(2em) translateX(-1.8em);
+  }
+  
+  .spokes:nth-child(8) {
+    transform: rotateZ(315deg) translateY(2em) translateX(-1.8em);
+  }
+  
+  .stand {
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    transform: translateZ(-3em);
+    transform-style: preserve-3d;
+  }
+  
+  .stand > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #654;
+    border-radius: 50%;
+    box-shadow: 0 0 2em 0 #000 inset;
+  }
+  
+  .stand > div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#012 40%, transparent 50%);
+  }
+  
+  .stand > div::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#012 40%, transparent 50%);
+  }
+  
+  @keyframes scene {
+    from {
+      transform: translateY(-5em) rotateY(0deg);
+    }
+    to {
+      transform: translateY(-5em) rotateY(-360deg);
+    }
+  }
+  
+  @keyframes wheel {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+  

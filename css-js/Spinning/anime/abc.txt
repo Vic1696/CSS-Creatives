@@ -1,0 +1,5 @@
+background: linear-gradient(45deg, #00f376 10%,transparent 10%,
+    transparent 50%, #00f376 50%, #00f376 60%, transparent 60%, transparent 100%);
+
+    linear-gradient(135deg, #00f376 10%,transparent 10%,
+    transparent 50%, #00f376 50%, #00f376 60%, transparent 60%, transparent 100%);;

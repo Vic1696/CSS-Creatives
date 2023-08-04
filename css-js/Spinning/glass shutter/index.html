@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Glass shutter</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <section>
+            <div>
+            <!-- <h2 id="rangeValue">0</h2> -->
+            <img src="Layer4.png" alt="" id="rangeValue">
+            <div class="fillRange" id="fillRangeTopLeft"></div>
+            <div class="fillRange" id="fillRangeTopRight"></div>
+            <div class="fillRange" id="fillRangeBottomLeft"></div>
+            <div class="fillRange" id="fillRangeBottomRight"></div>
+            <input type="range" class="range" min="0" value="0"
+             max="100" onmousemove="rangeSlider(this.value)"
+             onchange="rangeSlider(this.value)">
+            </div>
+
+        </section>
+
+        <script>
+            function rangeSlider(value){
+                let blur = (100-value)/2;
+                document.getElementById('rangeValue').innerHTML = value;
+
+                document.getElementById('fillRangeTopLeft').style.width = +blur+'%';
+
+                document.getElementById('fillRangeTopRight').style.height = +blur+'%';
+
+                document.getElementById('fillRangeBottomLeft').style.height = +blur+'%';
+
+                document.getElementById('fillRangeBottomRight').style.width = +blur+'%';
+            }
+        </script>
+    </body>
+</html>

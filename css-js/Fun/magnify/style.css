@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 250px;
+    background: url(Layer4.png);
+    background-attachment: fixed;
+}
+
+.one:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background: url(Layer4.png);
+    background-attachment: fixed;
+    box-shadow: 20px 0 100px rgba(0, 0, 0, .4),
+    -20px 0 100px rgba(0, 0, 0, .2);
+    background-size: 100%; /* Modified background-size */
+    background-position: 20% 60;
+    animation: animate 3s ease-in-out infinite;
+    transform: skewX(-30deg);
+}
+
+.two:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background: url(Layer4.png);
+    background-attachment: fixed;
+    box-shadow: 20px 0 100px rgba(0, 0, 0, .2),
+    -20px 0 100px rgba(0, 0, 0, .2);
+    background-size: 39%;
+    animation: animated 5s ease-in-out infinite;
+    transform: skewX(3deg);
+}
+
+.three:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background: url(Layer4.png);
+    background-attachment: fixed;
+    box-shadow: 20px 0 100px rgba(0, 0, 0, .2),
+    -20px 0 100px rgba(0, 0, 0, .2);
+    background-size: 39%;
+    animation: animates 5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0%, 100% {
+        left: 0px;
+    }
+    50% {
+        left: calc(100% - 50px);
+    }
+}
+
+@keyframes animated {
+    0%, 100% {
+        left: calc(100% - 50px);
+    }
+    50% {
+        left: 10px;
+    }
+}
+
+@keyframes animates {
+    0%, 100% {
+        left: calc(100% - 50px);
+    }
+    50% {
+left: 6px;
+    }
+}

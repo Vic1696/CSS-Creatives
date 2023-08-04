@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Zoom On Scroll</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    </head>
+    <body>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+            tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+            
+       </div>
+       <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+        tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+        
+   </div>
+   <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+    tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+    
+</div>
+
+
+
+        <div class="zoom">
+            <img src="s.png" alt="">
+        </div>
+        <div>
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sunt architecto soluta exercitationem, 
+             tempore officiis ipsam accusantium harum quasi nulla amet sint modi quidem, cum aliquid? Cum facilis rem repudiandae?
+
+        </div>
+
+        <script>
+            $(window).scroll(function(){
+                var scroll = $(window).scrollTop();
+                $(".zoom img").css({
+                    width: (100 + scroll/5) + "%"
+                })
+            })
+        </script>
+    </body>
+</html>

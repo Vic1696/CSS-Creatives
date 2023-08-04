@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #a02418;
+}
+
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    /* border-radius: 50%;
+    overflow: hidden; */
+}
+
+.box img{
+    width: 100%;
+}
+
+.box:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150px;
+    width: 100px;
+    height: 100%;
+    background: rgba(255,255,255, 0.3);
+    /* background: url('300X250.png'); */
+    transform:skewX(-30deg);
+}

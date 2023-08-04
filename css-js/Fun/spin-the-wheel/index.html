@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Spin the wheel </title>
+    
+</head>
+<body>
+    <div class="container">
+        <img src="./images/circle_1.svg" id="wheel" alt="Wheel of Lunch">  <!-- Change wheel Here -->
+        <br>
+        <img src="https://www.blimpage.com/pants/wheel_of_lunch_peg.svg" id="peg" alt="Peg">  <!-- You Can Change Peg Here -->
+        <br>
+        <button id="button">Spin</button>
+    </div>
+
+    <script>
+    var wheel = document.querySelector("#wheel"),
+    button = document.querySelector("#button"),
+    
+    rando = 0;
+
+    var spin_wheel = function () {
+    
+  rando += (Math.random() * 360) + 2880;
+  
+  wheel.style.webkitTransform = "rotate(" + rando + "deg)";
+  wheel.style.mozTransform = "rotate(" + rando + "deg)";
+  wheel.style.msTransform = "rotate(" + rando + "deg)";
+  wheel.style.transform = "rotate(" + rando + "deg)";
+  
+}
+
+button.addEventListener("click", spin_wheel, false);
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+.img-magnifier-container {
+  position:relative;
+  overflow: hidden;
+  width: 300px;
+  height: 250px;
+}
+
+/* 1 */
+.img-magnifier-glass {
+  position: absolute;
+  border-radius: 5%;
+  clip-path: polygon(50% 0, 100% 0, 50% 100%, 0 100%);
+  cursor: none;
+  width: 100px;
+  height: 100%;
+  animation: magnifier-animation 8.5s linear infinite;
+  background-repeat: no-repeat;
+  }
+
+@keyframes magnifier-animation {
+  0% {
+    left: -30%;
+    background-position: -10% 0;
+   }
+   
+  100% {
+    left: 130%; 
+    background-position: 120% 0;
+  }
+}
+
+/* 2 */
+.img-magnified-glass {
+  position: absolute;
+  border-radius: 5%;
+  clip-path: polygon(50% 0, 100% 0, 50% 100%, 0 100%);
+  cursor: none;
+  width: 100px;
+  height: 100%;
+  animation: magnified-animation 9s linear infinite;
+  background-repeat: no-repeat;
+  }
+
+@keyframes magnified-animation {
+  0% {
+    right: 0%; 
+    background-position: 100% 0;
+  }
+ 
+  100% {
+    right: 120%; 
+    background-position: -90% 0;
+  }
+}
+
+</style>
+<script>
+function magnify(imgID, zoom) {
+  img = document.getElementById(imgID);
+
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnifier-glass");
+
+  img.parentElement.insertBefore(glass, img);
+
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  
+}
+
+function magnified(imgID, zoom) {
+  img = document.getElementById(imgID);
+
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnified-glass");
+
+  img.parentElement.insertBefore(glass, img);
+
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  
+}
+</script>
+</head>
+<body>
+
+<div class="img-magnifier-container">
+<img id="myimage" src="300X250.png" width="300" height="250">
+  
+</div>
+
+
+<script>
+magnify("myimage", 1);
+magnified("myimage", 1);
+</script>
+
+</body>
+</html>
